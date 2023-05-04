@@ -39,7 +39,7 @@ export async function getStaticPaths() {
   }
 
   return {
-    fallback: false,
+    fallback: "blocking",
     paths: meetupsPaths,
   };
 }
@@ -67,7 +67,7 @@ export async function getStaticProps(context) {
         description: selectedMeetup.description,
       },
     },
-    revalidate: 10,
+    revalidate: 3,
   };
 }
 
